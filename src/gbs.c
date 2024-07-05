@@ -705,7 +705,7 @@ static void LoadWavePattern(struct GBSTrack *track, int patternID)
         {
             u32* mainPattern = (u32 *)(REG_ADDR_WAVE_RAM0);
             memcpy(mainPattern, sWaveTrackPatterns[patternID], sizeof(sWaveTrackPatterns[patternID]));
-            soundInfo->cgbChans[CGBCHANNEL_WAVE].cp = (u32)sWaveTrackPatterns[patternID];
+            soundInfo->cgbChans[CGBCHANNEL_WAVE].cp = (u32 *)sWaveTrackPatterns[patternID];
         }
 
         *velocity = track->velocity << 5;
